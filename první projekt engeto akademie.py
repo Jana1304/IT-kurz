@@ -51,10 +51,6 @@ print("\n2. Union Pacific Railroad History")
 print("\n3. Fossil Discovery at Fossil Butte")
 
 choices = int(input("\nWhich text would you like to analyze? Enter a number btw. 1 and 3 to select: "))
-capital_letter_words = [word for word in text_1_split if word.istitle()]
-uppercase_word = [words for words in text_1_split if words.isupper()]
-lowercase_word = [lwords for lwords in text_1_split if lwords.islower()]
-numbers_as_words_1 = ()
 if choices == 1:
    selected_text = text_1
    print("\nYou have selected 1. Fossil Butte Overview.")
