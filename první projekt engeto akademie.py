@@ -15,31 +15,30 @@ if user_name in users and users[user_name] == user_password:
 else:
     print("\nI’m sorry, but it seems that you are not registered.")
     exit()
-print("\nHere is your texts for analysis:")
 
-text_1 = """\nSituated about 10 miles west of Kemmerer
+text_1 = """Situated about 10 miles west of Kemmerer
 Fossil Butte is a ruggedly impressive
 topographic feature that rises sharply
 some 1000 feet above Twin Creek Valley
 to an elevation of more than 7500 feet
 above sea level. The butte is located just
 north of US 30N and the Union Pacific Railroad,
-which traverse the valley.\n"""
+which traverse the valley."""
 
-text_2 = """\nThe history of the Union Pacific Railroad
+text_2 = """The history of the Union Pacific Railroad
 in this region is closely tied to the
 construction of the transcontinental
 railroad in the 19th century. Railroads
 helped to shape economic and cultural
 landscapes, facilitating trade and
-movement across vast distances.\n"""
+movement across vast distances."""
 
-text_3 = """\nFossilized remains of ancient plants and animals
+text_3 = """Fossilized remains of ancient plants and animals
 have been discovered in Fossil Butte, providing
 evidence of prehistoric ecosystems. These fossils
 include fish, insects, and reptiles, which are
 remarkably well-preserved, offering scientists
-valuable insights into Earth's distant past.\n"""
+valuable insights into Earth's distant past."""
 
 choices = int(input("\nWhich text would you like to analyze? Enter a number btw. 1 and 3 to select: "))
 if choices == 1:
@@ -66,3 +65,15 @@ print("The number of words written in lowercase is: ", len(lowercase_word))
 print("The number of numbers written as words is: " , numbers_as_word)
 print("The sum of all numbers written as words is: ", count_numbers)
 
+print("A bar chart for the frequency of different word lengths in the text.")
+word_lengths = {}
+
+for word in text_split:  
+    word_length = len(word)  
+    if word_length in word_lengths:
+        word_lengths[word_length] += 1  
+    else:
+        word_lengths[word_length] = 1  
+
+for length in sorted(word_lengths.keys()):
+    print(str(length) + "| " + "*" * word_lengths[length] + " " + str(word_lengths[length]))
